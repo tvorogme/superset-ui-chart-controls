@@ -22,7 +22,7 @@ export const rgbToRgba = (rgb, alpha) => rgb.replace(/rgb/i, 'rgba').replace(/\)
 const MIN_OPACITY_BOUNDED = 0.05;
 const MIN_OPACITY_UNBOUNDED = 0;
 const MAX_OPACITY = 1;
-export const getOpacity = (value, cutoffPoint, extremeValue, minOpacity = MIN_OPACITY_BOUNDED, maxOpacity = MAX_OPACITY) => extremeValue === cutoffPoint ? maxOpacity : round(Math.abs((maxOpacity - minOpacity) / (extremeValue - cutoffPoint) * (value - cutoffPoint)) + minOpacity, 2);
+export const getOpacity = (value, cutoffPoint, extremeValue, minOpacity = MIN_OPACITY_BOUNDED, maxOpacity = MAX_OPACITY, isInvert = false) => extremeValue === cutoffPoint ? maxOpacity : round(Math.abs((maxOpacity - minOpacity) / (extremeValue - cutoffPoint) * (isInvert ? extremeValue - value : value - cutoffPoint)) + minOpacity, 2);
 export const getColorFunction = ({
   operator,
   targetValue,
@@ -178,7 +178,7 @@ export const getColorFunction = ({
       cutoffValue,
       extremeValue
     } = compareResult;
-    return rgbToRgba(colorScheme, getOpacity(value, cutoffValue, extremeValue, minOpacity, maxOpacity));
+    return rgbToRgba(colorScheme, getOpacity(value, cutoffValue, extremeValue, minOpacity, maxOpacity, operator === COMPARATOR.INVERSE));
   };
 };
 export const getColorFormatters = (columnConfig, data) => {

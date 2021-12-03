@@ -2717,8 +2717,8 @@
         "affectsGlobalScope": false
       },
       "./src/utils/getColorFormatters.ts": {
-        "version": "c8d5f729b52d01a8cf1cae0c7341c88ad987dda1900c87896206649be859b3a5",
-        "signature": "db572f4d612c80236a75e37be4add485c21f1ef19a3c492e51f111d22324908b",
+        "version": "82a476bbd3e719d4c76c0ce3c9b352a2f7b3ae4e8dedfa6fc838947e0072725f",
+        "signature": "284a43a67fdbfad97c784d8e830054b577621fe7eb9abe506ab226dde979db64",
         "affectsGlobalScope": false
       },
       "./src/utils/mainMetric.ts": {

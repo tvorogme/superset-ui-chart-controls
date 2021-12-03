@@ -39,12 +39,14 @@ export const getOpacity = (
   extremeValue: number,
   minOpacity = MIN_OPACITY_BOUNDED,
   maxOpacity = MAX_OPACITY,
+  isInvert = false,
 ) =>
   extremeValue === cutoffPoint
     ? maxOpacity
     : round(
         Math.abs(
-          ((maxOpacity - minOpacity) / (extremeValue - cutoffPoint)) * (value - cutoffPoint),
+          ((maxOpacity - minOpacity) / (extremeValue - cutoffPoint)) *
+            (isInvert ? extremeValue - value : value - cutoffPoint),
         ) + minOpacity,
         2,
       );
@@ -182,7 +184,14 @@ export const getColorFunction = (
     const { cutoffValue, extremeValue } = compareResult;
     return rgbToRgba(
       colorScheme,
-      getOpacity(value, cutoffValue, extremeValue, minOpacity, maxOpacity),
+      getOpacity(
+        value,
+        cutoffValue,
+        extremeValue,
+        minOpacity,
+        maxOpacity,
+        operator === COMPARATOR.INVERSE,
+      ),
     );
   };
 };
