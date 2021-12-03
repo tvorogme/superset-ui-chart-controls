@@ -42,7 +42,7 @@ export const getColorFunction = ({
     return () => undefined;
   }
 
-  if (operator !== COMPARATOR.NONE && !MULTIPLE_VALUE_COMPARATORS.includes(operator) && targetValue === undefined) {
+  if (operator !== COMPARATOR.NONE && operator !== COMPARATOR.INVERSE && !MULTIPLE_VALUE_COMPARATORS.includes(operator) && targetValue === undefined) {
     return () => undefined;
   }
 
@@ -66,7 +66,9 @@ export const getColorFunction = ({
 
       comparatorFunction = (value, allValues) => {
         const cutoffValue = Math.min(...allValues);
-        const extremeValue = Math.max(...allValues);
+        const extremeValue = Math.max(...allValues); // eslint-disable-next-line no-console
+
+        console.log(value, cutoffValue, extremeValue);
         return value >= cutoffValue && value <= extremeValue ? {
           extremeValue,
           cutoffValue
@@ -183,7 +185,7 @@ export const getColorFormatters = (columnConfig, data) => {
   var _columnConfig$reduce;
 
   return (_columnConfig$reduce = columnConfig == null ? void 0 : columnConfig.reduce((acc, config) => {
-    if ((config == null ? void 0 : config.column) !== undefined && ((config == null ? void 0 : config.operator) === COMPARATOR.NONE || (config == null ? void 0 : config.operator) !== undefined && (MULTIPLE_VALUE_COMPARATORS.includes(config == null ? void 0 : config.operator) ? (config == null ? void 0 : config.targetValueLeft) !== undefined && (config == null ? void 0 : config.targetValueRight) !== undefined : (config == null ? void 0 : config.targetValue) !== undefined))) {
+    if ((config == null ? void 0 : config.column) !== undefined && ((config == null ? void 0 : config.operator) === COMPARATOR.NONE || (config == null ? void 0 : config.operator) === COMPARATOR.INVERSE || (config == null ? void 0 : config.operator) !== undefined && (MULTIPLE_VALUE_COMPARATORS.includes(config == null ? void 0 : config.operator) ? (config == null ? void 0 : config.targetValueLeft) !== undefined && (config == null ? void 0 : config.targetValueRight) !== undefined : (config == null ? void 0 : config.targetValue) !== undefined))) {
       acc.push({
         column: config == null ? void 0 : config.column,
         getColorFromValue: getColorFunction(config, data.map(row => row[config.column]))

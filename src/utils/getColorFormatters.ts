@@ -77,6 +77,7 @@ export const getColorFunction = (
   }
   if (
     operator !== COMPARATOR.NONE &&
+    operator !== COMPARATOR.INVERSE &&
     !MULTIPLE_VALUE_COMPARATORS.includes(operator) &&
     targetValue === undefined
   ) {
@@ -98,6 +99,8 @@ export const getColorFunction = (
       comparatorFunction = (value: number, allValues: number[]) => {
         const cutoffValue = Math.min(...allValues);
         const extremeValue = Math.max(...allValues);
+        // eslint-disable-next-line no-console
+        console.log(value, cutoffValue, extremeValue);
         return value >= cutoffValue && value <= extremeValue
           ? { extremeValue, cutoffValue }
           : false;
@@ -192,6 +195,7 @@ export const getColorFormatters = (
     if (
       config?.column !== undefined &&
       (config?.operator === COMPARATOR.NONE ||
+        config?.operator === COMPARATOR.INVERSE ||
         (config?.operator !== undefined &&
           (MULTIPLE_VALUE_COMPARATORS.includes(config?.operator)
             ? config?.targetValueLeft !== undefined && config?.targetValueRight !== undefined
