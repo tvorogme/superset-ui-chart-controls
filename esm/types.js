@@ -7,6 +7,7 @@ export let COMPARATOR;
 
 (function (COMPARATOR) {
   COMPARATOR["NONE"] = "None";
+  COMPARATOR["INVERSE"] = "Inverse";
   COMPARATOR["GREATER_THAN"] = ">";
   COMPARATOR["LESS_THAN"] = "<";
   COMPARATOR["GREATER_OR_EQUAL"] = "\u2265";

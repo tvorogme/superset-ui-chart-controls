@@ -17,7 +17,7 @@
  * under the License.
  */
 import { DataRecord } from '@superset-ui/core';
-import {
+import _types, {
   ColorFormatters,
   COMPARATOR,
   ConditionalFormattingConfig,
@@ -90,6 +90,16 @@ export const getColorFunction = (
         const extremeValue = Math.max(...allValues);
         return value >= cutoffValue && value <= extremeValue
           ? { cutoffValue, extremeValue }
+          : false;
+      };
+      break;
+    case COMPARATOR.INVERSE:
+      minOpacity = MIN_OPACITY_UNBOUNDED;
+      comparatorFunction = (value: number, allValues: number[]) => {
+        const cutoffValue = Math.min(...allValues);
+        const extremeValue = Math.max(...allValues);
+        return value >= cutoffValue && value <= extremeValue
+          ? { extremeValue, cutoffValue }
           : false;
       };
       break;

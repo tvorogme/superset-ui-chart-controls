@@ -2683,7 +2683,7 @@
       },
       "./src/shared-controls/components/ColumnConfigControl/constants.tsx": {
         "version": "0da383a9c1d74aae9811db9b3f28f4c2848dc7f43b6a6f9668f0f01141eb81f4",
-        "signature": "bf333ae5d2ab9c0eb140a2703f3427433402b07ee5e136c468c223135a30eed9",
+        "signature": "0abcea12fc45c628efd64aad2613313f3136205176121563d84d270ec25bec91",
         "affectsGlobalScope": false
       },
       "./src/shared-controls/components/ColumnConfigControl/ColumnConfigPopover.tsx": {
@@ -2717,7 +2717,7 @@
         "affectsGlobalScope": false
       },
       "./src/utils/getColorFormatters.ts": {
-        "version": "0483e31e8f2d94a0b669dbacdea7dbf16a7e2d0fa4f2fdaa34bbdbfe806335ed",
+        "version": "e3a23db9267a7fe62343d03fdd6c30e5759538058640a6acf55a62c5d725fcef",
         "signature": "db572f4d612c80236a75e37be4add485c21f1ef19a3c492e51f111d22324908b",
         "affectsGlobalScope": false
       },
@@ -2757,8 +2757,8 @@
         "affectsGlobalScope": false
       },
       "./src/types.ts": {
-        "version": "4b375c3115b275127838026491bb65bc00ac36ef9a17b4e3d9ceb23c6c6d6066",
-        "signature": "151f0294aa350c0445fccdac5bb3415ab7cff239a7d197d4063350553c675225",
+        "version": "99cadf23ae6c5e45cf1e07195c40432e448034f8c64b6bcd99a2fdf4f3d68017",
+        "signature": "71fd3754da68abb401adc637f997560ab3bf3174952cbeefb25b080fb3ee3d71",
         "affectsGlobalScope": false
       },
       "./src/constants.ts": {

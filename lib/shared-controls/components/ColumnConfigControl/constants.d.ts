@@ -58,8 +58,8 @@ export declare const SHARED_COLUMN_CONFIG_PROPS: {
         value?: string | undefined;
         defaultValue?: string | undefined;
     } & {
-        value?: "center" | "left" | "right" | undefined;
-        defaultValue?: "center" | "left" | "right" | undefined;
+        value?: "left" | "right" | "center" | undefined;
+        defaultValue?: "left" | "right" | "center" | undefined;
     };
     showCellBars: ControlFormItemSpec<"Checkbox">;
     alignPositiveNegative: ControlFormItemSpec<"Checkbox">;

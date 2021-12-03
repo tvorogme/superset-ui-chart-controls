@@ -61,6 +61,20 @@ export const getColorFunction = ({
 
       break;
 
+    case COMPARATOR.INVERSE:
+      minOpacity = MIN_OPACITY_UNBOUNDED;
+
+      comparatorFunction = (value, allValues) => {
+        const cutoffValue = Math.max(...allValues);
+        const extremeValue = Math.min(...allValues);
+        return value >= cutoffValue && value <= extremeValue ? {
+          cutoffValue,
+          extremeValue
+        } : false;
+      };
+
+      break;
+
     case COMPARATOR.GREATER_THAN:
       comparatorFunction = (value, allValues) => value > targetValue ? {
         cutoffValue: targetValue,
