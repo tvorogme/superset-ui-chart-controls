@@ -65,11 +65,11 @@ export const getColorFunction = ({
       minOpacity = MIN_OPACITY_UNBOUNDED;
 
       comparatorFunction = (value, allValues) => {
-        const cutoffValue = Math.max(...allValues);
-        const extremeValue = Math.min(...allValues);
+        const cutoffValue = Math.min(...allValues);
+        const extremeValue = Math.max(...allValues);
         return value >= cutoffValue && value <= extremeValue ? {
-          cutoffValue,
-          extremeValue
+          extremeValue,
+          cutoffValue
         } : false;
       };
 

@@ -2717,7 +2717,7 @@
         "affectsGlobalScope": false
       },
       "./src/utils/getColorFormatters.ts": {
-        "version": "e3a23db9267a7fe62343d03fdd6c30e5759538058640a6acf55a62c5d725fcef",
+        "version": "352621ee229ffbe9652e3e00ea9379e06b883f01f26d0e63e351d9f88c637662",
         "signature": "db572f4d612c80236a75e37be4add485c21f1ef19a3c492e51f111d22324908b",
         "affectsGlobalScope": false
       },
