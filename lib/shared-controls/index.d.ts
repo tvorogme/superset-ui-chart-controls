@@ -53,6 +53,7 @@ declare const sharedControls: {
     x_axis_time_format: SelectControlConfig<import("../types").SelectOption, "SelectControl">;
     adhoc_filters: import("../types").BaseControlConfig<"DndFilterSelect", import("../types").SelectOption, import("@superset-ui/core").JsonValue> | SelectControlConfig<import("../types").SelectOption, "AdhocFilterControl">;
     color_scheme: import("../types").BaseControlConfig<"ColorSchemeControl", import("../types").SelectOption, import("@superset-ui/core").JsonValue>;
+    label_colors: import("../types").BaseControlConfig<"ColorSchemeControl", import("../types").SelectOption, import("@superset-ui/core").JsonValue>;
     label_colors: import("../types").BaseControlConfig<"ColorMapControl", import("../types").SelectOption, import("@superset-ui/core").JsonValue>;
     series_columns: import("../types").BaseControlConfig<"DndColumnSelect", import("../types").SelectOption, import("@superset-ui/core").JsonValue> | SelectControlConfig<ColumnMeta, "SelectControl">;
     series_limit: SelectControlConfig<import("../types").SelectOption, "SelectControl">;
