@@ -179,7 +179,6 @@ export const getColorFunction = ({
     return rgbToRgba(colorScheme, getOpacity(value, cutoffValue, extremeValue, minOpacity, maxOpacity, operator === COMPARATOR.INVERSE));
   };
 };
-alert("KEK!");
 export const getColorFormatters = (columnConfig, data) => {
   var _columnConfig$reduce;
 
