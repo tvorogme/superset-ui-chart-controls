@@ -353,6 +353,7 @@ export type ConditionalFormattingConfig = {
   targetValueLeft?: number;
   targetValueRight?: number;
   column?: string;
+  inverseMode?: string;
   colorScheme?: string;
 };
 

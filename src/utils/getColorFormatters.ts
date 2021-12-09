@@ -199,7 +199,7 @@ export const getColorFormatters = (
   data: DataRecord[],
 ) =>
   columnConfig?.reduce((acc: ColorFormatters, config: ConditionalFormattingConfig) => {
-    console.log(columnConfig);
+    console.log(config.inverseMode);
 
     if (
       config?.column !== undefined &&

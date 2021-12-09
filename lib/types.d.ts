@@ -219,6 +219,7 @@ export declare type ConditionalFormattingConfig = {
     targetValueLeft?: number;
     targetValueRight?: number;
     column?: string;
+    inverseMode?: string;
     colorScheme?: string;
 };
 export declare type ColorFormatters = {
