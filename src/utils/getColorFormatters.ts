@@ -101,8 +101,6 @@ export const getColorFunction = (
       comparatorFunction = (value: number, allValues: number[]) => {
         const cutoffValue = Math.min(...allValues);
         const extremeValue = Math.max(...allValues);
-        // eslint-disable-next-line no-console
-        console.log(value, cutoffValue, extremeValue);
         return value >= cutoffValue && value <= extremeValue
           ? { extremeValue, cutoffValue }
           : false;
@@ -201,6 +199,8 @@ export const getColorFormatters = (
   data: DataRecord[],
 ) =>
   columnConfig?.reduce((acc: ColorFormatters, config: ConditionalFormattingConfig) => {
+    console.log(columnConfig);
+
     if (
       config?.column !== undefined &&
       (config?.operator === COMPARATOR.NONE ||
