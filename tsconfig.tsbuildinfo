@@ -2717,7 +2717,7 @@
         "affectsGlobalScope": false
       },
       "./src/utils/getColorFormatters.ts": {
-        "version": "766069ad68a1c0c51ce8ee409d74521a1f97bfff3d785f23033f2dfd84dacfe8",
+        "version": "8d8f8486ec4890d75a8afa0b2d14664a1e875f8072aef272814595300ae4bd5d",
         "signature": "8108ef2b45db4778f180954830bc9b432fe01e2166ecd84a228e26b3041d8def",
         "affectsGlobalScope": false
       },
@@ -2757,8 +2757,8 @@
         "affectsGlobalScope": false
       },
       "./src/types.ts": {
-        "version": "9879455af60066d9a565f98af5fe0f1004fb276eff74e594669e7a501c544fbf",
-        "signature": "4fbf06cae538c91c82fda008a069ee3d2c5d1874053098878c44f6832e9bac99",
+        "version": "0f3429a5c395e30a576548c1c9d2c25cff3a8a7b3f3e002d3f6b78c11bd7f667",
+        "signature": "5e67364f0c8f802a7aa2ceb0ea5cb99f1a32558f1d5c5522795e500eba7abdea",
         "affectsGlobalScope": false
       },
       "./src/constants.ts": {

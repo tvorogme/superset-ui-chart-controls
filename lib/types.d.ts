@@ -200,7 +200,6 @@ export declare type SectionOverrides = {
 };
 export declare enum COMPARATOR {
     NONE = "None",
-    INVERSE = "Inverse",
     GREATER_THAN = ">",
     LESS_THAN = "<",
     GREATER_OR_EQUAL = "\u2265",
