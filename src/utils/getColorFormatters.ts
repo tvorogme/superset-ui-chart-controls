@@ -80,7 +80,6 @@ export const getColorFunction = (
   }
   if (
     operator !== COMPARATOR.NONE &&
-    operator !== COMPARATOR.INVERSE &&
     !MULTIPLE_VALUE_COMPARATORS.includes(operator) &&
     targetValue === undefined
   ) {
@@ -94,16 +93,6 @@ export const getColorFunction = (
         const extremeValue = Math.max(...allValues);
         return value >= cutoffValue && value <= extremeValue
           ? { cutoffValue, extremeValue }
-          : false;
-      };
-      break;
-    case COMPARATOR.INVERSE:
-      minOpacity = MIN_OPACITY_UNBOUNDED;
-      comparatorFunction = (value: number, allValues: number[]) => {
-        const cutoffValue = Math.min(...allValues);
-        const extremeValue = Math.max(...allValues);
-        return value >= cutoffValue && value <= extremeValue
-          ? { extremeValue, cutoffValue }
           : false;
       };
       break;
@@ -203,7 +192,6 @@ export const getColorFormatters = (
     if (
       config?.column !== undefined &&
       (config?.operator === COMPARATOR.NONE ||
-        config?.operator === COMPARATOR.INVERSE ||
         (config?.operator !== undefined &&
           (MULTIPLE_VALUE_COMPARATORS.includes(config?.operator)
             ? config?.targetValueLeft !== undefined && config?.targetValueRight !== undefined
