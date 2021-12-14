@@ -21,6 +21,6 @@ import { ColorFormatters, ConditionalFormattingConfig } from '../types';
 export declare const round: (num: number, precision?: number) => number;
 export declare const rgbToRgba: (rgb: string, alpha: number) => string;
 export declare const getOpacity: (value: number, cutoffPoint: number, extremeValue: number, minOpacity?: number, maxOpacity?: number, isInvert?: boolean) => number;
-export declare const getColorFunction: ({ operator, targetValue, targetValueLeft, targetValueRight, colorScheme, }: ConditionalFormattingConfig, columnValues: number[]) => (value: number) => string | undefined;
+export declare const getColorFunction: ({ operator, targetValue, targetValueLeft, targetValueRight, inverseMode, colorScheme, }: ConditionalFormattingConfig, columnValues: number[]) => (value: number) => string | undefined;
 export declare const getColorFormatters: (columnConfig: ConditionalFormattingConfig[] | undefined, data: DataRecord[]) => ColorFormatters;
 //# sourceMappingURL=getColorFormatters.d.ts.map

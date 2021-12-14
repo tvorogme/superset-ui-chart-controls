@@ -57,6 +57,7 @@ export const getColorFunction = (
     targetValue,
     targetValueLeft,
     targetValueRight,
+    inverseMode,
     colorScheme,
   }: ConditionalFormattingConfig,
   columnValues: number[],
@@ -188,7 +189,7 @@ export const getColorFunction = (
         extremeValue,
         minOpacity,
         maxOpacity,
-        operator === COMPARATOR.INVERSE,
+        inverseMode === 'Inversed',
       ),
     );
   };
@@ -199,8 +200,6 @@ export const getColorFormatters = (
   data: DataRecord[],
 ) =>
   columnConfig?.reduce((acc: ColorFormatters, config: ConditionalFormattingConfig) => {
-    console.log(config.inverseMode);
-
     if (
       config?.column !== undefined &&
       (config?.operator === COMPARATOR.NONE ||
